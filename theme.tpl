@@ -11,7 +11,7 @@ http://www.tumblr.com/theme/9601     Version 2.7     25/01/2014
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="color:Background" content="#ffffff"/>
-<meta name="color:Title" content="#c2464c"/>
+<meta name="color:Title" content="#0f0303"/>
 <meta name="color:Text" content="#292929"/>
 <meta name="color:Minor text" content="#c7c7c7"/>
 <meta name="color:Line" content="#EEEEEE"/>
