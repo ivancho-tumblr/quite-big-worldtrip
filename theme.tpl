@@ -649,6 +649,22 @@ a {
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 
+<script>
+// Detect searching for place with no posts yet and provide helpful info.
+$(document).ready(function() {
+    if ($("p:contains(The URL you requested could not be found.)")) {
+        var RE_searched_tag = /\/tagged\/(.+)/;
+        var match = RE_searched_tag.exec(window.location.pathname);
+        if (match != null) {
+            var place = match[1].charAt(0).toUpperCase() + match[1].slice(1);
+            $("p:contains(The URL you requested could not be found.)").html(
+                "It appears we haven't posted anything from " + place + " yet - coming soon."
+            );
+        }
+    }
+});
+</script>
+
 {block:IfLargePhotoset}
 
 <script>
