@@ -701,189 +701,137 @@ $(function(){
   </p>{/block:Description}
 
 <p>
-{block:IfCenterlinks}<center>{/block:IfCenterlinks}
 
+<!-- Navigation links !-->
+{block:IfCenterlinks}<center>{/block:IfCenterlinks}
 <a class="single_links" href="/">Home</a>
 
 {block:HasPages}{block:Pages}
-
 <a class="single_links" href="{URL}">{Label}</a>
-
 {/block:Pages}{/block:HasPages}
 
 
 {block:SubmissionsEnabled}{block:IfSubmitlink}
-                <a class="single_links" href="/submit">{SubmitLabel}</a>
-                {/block:IfSubmitlink}{/block:SubmissionsEnabled}
-
+<a class="single_links" href="/submit">{SubmitLabel}</a>
+{/block:IfSubmitlink}{/block:SubmissionsEnabled}
 {block:AskEnabled}{block:IfAskLink}
 <a class="single_links" href="/ask">{AskLabel}</a>
 {/block:IfAskLink}{/block:AskEnabled}
 
-
 {block:IfCenterlinks}</center>{/block:IfCenterlinks}</p>
-
-
 </div>
 
-
-
+<!-- Posts !-->
 <ol id="posts">
-
-  <div class="top_padding"></div>
+<div class="top_padding"></div>
 
 {block:Posts}
-
-
-<li class="post" id="post{PostID}">
-
-    {block:Text}
-
- <div class="meta">
-
-
-{block:IfCenterall}<center>{/block:IfCenterall}
-{block:Date}<h4><a title="permalink" href="{Permalink}">{DayOfMonth} {ShortMonth}</a>{/block:Date}
-{block:IfShownotecount}{block:NoteCount}
-&nbsp<a title="permalink" href="{Permalink}">{NoteCountWithLabel}</a>
-</h4>{/block:NoteCount}{/block:IfShownotecount}
-{block:IfCenterall}</center>{/block:IfCenterall}
-
-
-
-    </div><br>
-
+<li class="post {PostType} {TagsAsClasses}" id="post{PostID}">
+  {block:Text}
+    <div class="meta">
+      {block:IfCenterall}<center>{/block:IfCenterall}
+      {block:Date}<h4><a title="permalink" href="{Permalink}">{DayOfMonth} {ShortMonth}</a>{/block:Date}
+      {block:IfShownotecount}
+        {block:NoteCount}&nbsp<a title="permalink" href="{Permalink}">{NoteCountWithLabel}</a></h4>{/block:NoteCount}
+      {/block:IfShownotecount}
+      {block:IfCenterall}</center>{/block:IfCenterall}
+    </div>
+    <br>
     <div class="content text-post">
-
       {block:Title}<h3 class="title_gap">{Title}</h3>{/block:Title}
-
       <div class="text">{Body}</div>
     </div>
-    {/block:Text}
+  {/block:Text}
 
-   {block:Photo}
-
-<div class="meta">
-
-
-{block:IfCenterall}<center>{/block:IfCenterall}
-{block:Date}<h4><a title="permalink" href="{Permalink}">{DayOfMonth} {ShortMonth}</a>{/block:Date}
-{block:IfShownotecount}{block:NoteCount}
-&nbsp<a title="permalink" href="{Permalink}">{NoteCountWithLabel}</a>
-</h4>{/block:NoteCount}{/block:IfShownotecount}
-{block:IfCenterall}</center>{/block:IfCenterall}
-
-
+  {block:Photo}
+    <div class="meta">
+      {block:IfCenterall}<center>{/block:IfCenterall}
+      {block:Date}<h4><a title="permalink" href="{Permalink}">{DayOfMonth} {ShortMonth}</a>{/block:Date}
+      {block:IfShownotecount}
+        {block:NoteCount}&nbsp<a title="permalink" href="{Permalink}">{NoteCountWithLabel}</a></h4>{/block:NoteCount}
+      {/block:IfShownotecount}
+      {block:IfCenterall}</center>{/block:IfCenterall}
     </div>
-
     <div class="content photo-post">
       <div class="photo">
-
         {block:IndexPage}<a href="{Permalink}">{/block:IndexPage}
         {block:PermalinkPage}{LinkOpenTag}{/block:PermalinkPage}
           <img src="{block:IndexPage}{PhotoURL-HighRes}{/block:IndexPage}{block:PermalinkPage}{PhotoURL-HighRes}{/block:PermalinkPage}" alt="{PhotoAlt}">
         {block:IndexPage}</a>{/block:IndexPage}
         {block:PermalinkPage}{LinkCloseTag}{/block:PermalinkPage}
-
       </div>
-
-
-
       {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
     </div>
-    {/block:Photo}
+  {/block:Photo}
 
-
-
-{block:Photoset}
-
-        <div class="meta">
-
-
-{block:IfCenterall}<center>{/block:IfCenterall}
-{block:Date}<h4><a title="permalink" href="{Permalink}">{DayOfMonth} {ShortMonth}</a>{/block:Date}
-{block:IfShownotecount}{block:NoteCount}
-&nbsp<a title="permalink" href="{Permalink}">{NoteCountWithLabel}</a>
-</h4>{/block:NoteCount}{/block:IfShownotecount}
-{block:IfCenterall}</center>{/block:IfCenterall}
-
-
+  {block:Photoset}
+    <div class="meta">
+      {block:IfCenterall}<center>{/block:IfCenterall}
+      {block:Date}<h4><a title="permalink" href="{Permalink}">{DayOfMonth} {ShortMonth}</a>{/block:Date}
+      {block:IfShownotecount}
+        {block:NoteCount}&nbsp<a title="permalink" href="{Permalink}">{NoteCountWithLabel}</a></h4>{/block:NoteCount}
+      {/block:IfShownotecount}
+      {block:IfCenterall}</center>{/block:IfCenterall}
     </div>
-
     <div class="content photo-post">
       <div class="photo">
-
-
-       {block:IfLargePhotoset}{Photoset-700}{/block:IfLargePhotoset}
-
-       {block:IfNotLargePhotoset}{block:Photos} <div class="single"><img src="{PhotoURL-HighRes}"/></div>{block:Caption}<div class="caption">{Caption}</div>{/block:Caption}{/block:Photos}{/block:IfNotLargePhotoset}
-
+        {block:IfLargePhotoset}{Photoset-700}{/block:IfLargePhotoset}
+        {block:IfNotLargePhotoset}
+          {block:Photos}
+            <div class="single">
+              <img src="{PhotoURL-HighRes}"/>
+            </div>
+            {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+          {/block:Photos}
+        {/block:IfNotLargePhotoset}
       </div>
-
-
-
       {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
     </div>
-                {/block:Photoset}
+  {/block:Photoset}
 
-
-    {block:Quote}
-
-<div class="meta">
-
-
-{block:IfCenterall}<center>{/block:IfCenterall}
-{block:Date}<h4><a title="permalink" href="{Permalink}">{DayOfMonth} {ShortMonth}</a>{/block:Date}
-{block:IfShownotecount}{block:NoteCount}
-&nbsp<a title="permalink" href="{Permalink}">{NoteCountWithLabel}</a>
-</h4>{/block:NoteCount}{/block:IfShownotecount}
-{block:IfCenterall}</center>{/block:IfCenterall}
-
-
-    </div><br>
+  {block:Quote}
+    <div class="meta">
+      {block:IfCenterall}<center>{/block:IfCenterall}
+      {block:Date}<h4><a title="permalink" href="{Permalink}">{DayOfMonth} {ShortMonth}</a>{/block:Date}
+      {block:IfShownotecount}
+        {block:NoteCount}&nbsp<a title="permalink" href="{Permalink}">{NoteCountWithLabel}</a></h4>{/block:NoteCount}
+      {/block:IfShownotecount}
+      {block:IfCenterall}</center>{/block:IfCenterall}
+    </div>
+    <br>
     <div class="content quote-post {Length}-quote">
       <div class="quote">"{Quote}"</div>
       {block:IfCenterall}</center>{/block:IfCenterall}
-
       {block:Source}<div class="source">&mdash;&#8194;{Source}</div>{/block:Source}
     </div>
-    {/block:Quote}
+  {/block:Quote}
 
-    {block:Link}
-
-<div class="meta">
-
-{block:IfCenterall}<center>{/block:IfCenterall}
-{block:Date}<h4><a title="permalink" href="{Permalink}">{DayOfMonth} {ShortMonth}</a>{/block:Date}
-{block:IfShownotecount}{block:NoteCount}
-&nbsp<a title="permalink" href="{Permalink}">{NoteCountWithLabel}</a>
-</h4>{/block:NoteCount}{/block:IfShownotecount}
-{block:IfCenterall}</center>{/block:IfCenterall}
-
-
-
-    </div><br>
+  {block:Link}
+    <div class="meta">
+      {block:IfCenterall}<center>{/block:IfCenterall}
+      {block:Date}<h4><a title="permalink" href="{Permalink}">{DayOfMonth} {ShortMonth}</a>{/block:Date}
+      {block:IfShownotecount}
+        {block:NoteCount}&nbsp<a title="permalink" href="{Permalink}">{NoteCountWithLabel}</a></h4>{/block:NoteCount}
+      {/block:IfShownotecount}
+      {block:IfCenterall}</center>{/block:IfCenterall}
+    </div>
+    <br>
     <div class="content link-post">
       <h3 class="link"><a href="{URL}">{Name}</a>&nbsp&nbsp&#187;</h3>
-
       {block:Description}<div class="caption">{Description}</div>{/block:Description}
     </div>
-    {/block:Link}
+  {/block:Link}
 
-    {block:Chat}
-
-<div class="meta">
-
-
-{block:IfCenterall}<center>{/block:IfCenterall}
-{block:Date}<h4><a title="permalink" href="{Permalink}">{DayOfMonth} {ShortMonth}</a>{/block:Date}
-{block:IfShownotecount}{block:NoteCount}
-&nbsp<a title="permalink" href="{Permalink}">{NoteCountWithLabel}</a>
-</h4>{/block:NoteCount}{/block:IfShownotecount}
-{block:IfCenterall}</center>{/block:IfCenterall}
-
-    </div><br>
-
+  {block:Chat}
+    <div class="meta">
+      {block:IfCenterall}<center>{/block:IfCenterall}
+      {block:Date}<h4><a title="permalink" href="{Permalink}">{DayOfMonth} {ShortMonth}</a>{/block:Date}
+      {block:IfShownotecount}
+        {block:NoteCount}&nbsp<a title="permalink" href="{Permalink}">{NoteCountWithLabel}</a></h4>{/block:NoteCount}
+      {/block:IfShownotecount}
+      {block:IfCenterall}</center>{/block:IfCenterall}
+    </div>
+    <br>
     <div class="content chat-post">
       {block:Title}<h3>{Title}</h3>{/block:Title}
 
@@ -894,179 +842,126 @@ $(function(){
         </li>{/block:Lines}
       </ol>
     </div>
-    {/block:Chat}
+  {/block:Chat}
 
-
-
-{block:Video}
-
-<div class="meta">
-
-
-{block:IfCenterall}<center>{/block:IfCenterall}
-{block:Date}<h4><a title="permalink" href="{Permalink}">{DayOfMonth} {ShortMonth}</a>{/block:Date}
-{block:IfShownotecount}{block:NoteCount}
-&nbsp<a title="permalink" href="{Permalink}">{NoteCountWithLabel}</a>
-</h4>{/block:NoteCount}{/block:IfShownotecount}
-{block:IfCenterall}</center>{/block:IfCenterall}
-
-
-
+  {block:Video}
+    <div class="meta">
+      {block:IfCenterall}<center>{/block:IfCenterall}
+      {block:Date}<h4><a title="permalink" href="{Permalink}">{DayOfMonth} {ShortMonth}</a>{/block:Date}
+      {block:IfShownotecount}
+        {block:NoteCount}&nbsp<a title="permalink" href="{Permalink}">{NoteCountWithLabel}</a></h4>{/block:NoteCount}
+      {/block:IfShownotecount}
+      {block:IfCenterall}</center>{/block:IfCenterall}
     </div>
-   <div class="content video-post">
-       <div class="video">{VideoEmbed-700}</div>
+    <div class="content video-post">
+      <div class="video">{VideoEmbed-700}</div>
       <div class="vidcaption">{block:Caption}{Caption}{/block:Caption}<div class="nocaption">&nbsp;</div></div>
     </div>
-    {/block:Video}
+  {/block:Video}
 
-
-
-
-    {block:Audio}
-
-<div class="meta">
-
-
-{block:IfCenterall}<center>{/block:IfCenterall}
-{block:Date}<h4><a title="permalink" href="{Permalink}">{DayOfMonth} {ShortMonth}</a>{/block:Date}
-{block:IfShownotecount}{block:NoteCount}
-&nbsp<a title="permalink" href="{Permalink}">{NoteCountWithLabel}</a>
-</h4>{/block:NoteCount}{/block:IfShownotecount}
-{block:IfCenterall}</center>{/block:IfCenterall}
-
-
-
-    </div><br>
-
-
-
-
-
+  {block:Audio}
+    <div class="meta">
+      {block:IfCenterall}<center>{/block:IfCenterall}
+      {block:Date}<h4><a title="permalink" href="{Permalink}">{DayOfMonth} {ShortMonth}</a>{/block:Date}
+      {block:IfShownotecount}
+        {block:NoteCount}&nbsp<a title="permalink" href="{Permalink}">{NoteCountWithLabel}</a></h4>{/block:NoteCount}
+      {/block:IfShownotecount}
+      {block:IfCenterall}</center>{/block:IfCenterall}
+    </div>
+    <br>
     <div class="content audio-post">
-    {block:IfCenterall}<center>{/block:IfCenterall}
-<div class="audiobox">
-      <div class="audio">
+      {block:IfCenterall}<center>{/block:IfCenterall}
+      <div class="audiobox">
+        <div class="audio">
+          {block:AudioEmbed}<div class="wide_audio">{AudioEmbed-640}</div>{/block:AudioEmbed}
+        </div>
+      </div>
+      {block:IfCenterall}</center>{/block:IfCenterall}
+      {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+    </div>
+  {/block:Audio}
 
-      {block:AudioEmbed}<div class="wide_audio">{AudioEmbed-640}</div>{/block:AudioEmbed}
-
-</div></div> {block:IfCenterall}</center>{/block:IfCenterall}
-
- {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
-</div>
-
-    {/block:Audio}
-
-
-{block:IfShowtags}{block:HasTags}
-            <div class="tags">
-            {lang:Tagged}
-            {block:Tags}
-            <a href="{TagURL}">#{Tag}</a>
-            {/block:Tags}
-            </div>
-            {/block:HasTags}{/block:IfShowtags}
-
+  {block:IfShowtags}{block:HasTags}
+    <div class="tags">
+      {lang:Tagged}
+      {block:Tags}
+        <a href="{TagURL}">#{Tag}</a>
+      {/block:Tags}
+    </div>
+  {/block:HasTags}{/block:IfShowtags}
 
 <div class="clear">&nbsp;</div>
-
-  </li>
-
+</li>
 {/block:Posts}
 
 
 {block:IfDisqusShortname}
-        {block:Permalink}
-        <div id="disqus">
-        <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script><noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">View the discussion thread.</a></noscript>
-        </div>
-        {/block:Permalink}
-        <script type="text/javascript">
-        //<![CDATA[
-        (function() {
-             var links = document.getElementsByTagName('a');
-             var query = '?';
-             for(var i = 0; i < links.length; i++) {
-                 if(links[i].href.indexOf('#disqus_thread') >= 0) {
-                     query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-                 }
-             }
-        document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');
-
-        })();
-
-        //]]>
-        </script>
-        {/block:IfDisqusShortname}
-
-
+{block:Permalink}
+  <div id="disqus">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script>
+    <noscript><a href="http://{text:Disqus Shortname}.disqus.com/?url=ref">View the discussion thread.</a></noscript>
+  </div>
+{/block:Permalink}
+<script type="text/javascript">
+//<![CDATA[
+  (function() {
+      var links = document.getElementsByTagName('a');
+      var query = '?';
+      for(var i = 0; i < links.length; i++) {
+          if(links[i].href.indexOf('#disqus_thread') >= 0) {
+              query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+          }
+      }
+      document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');
+  })();
+//]]>
+</script>
+{/block:IfDisqusShortname}
 </div> <!-- .box -->
-      {/block:Posts}
+{/block:Posts}
+</div> <!-- .posts -->
 
+<div style="clear: both;"></div>
+{block:PermalinkPage}
+{block:IfShownotesonpermalinkpages}
+  {block:IfCenterall}<center>{/block:IfCenterall}
+  {PostNotes}
+  {block:IfCenterall}</center>{/block:IfCenterall}
+{/block:IfShownotesonpermalinkpages}
+{block:PermalinkPage}
 
-
-    </div> <!-- .posts -->
-
-    <div style="clear: both;"></div>
-
-    {block:PermalinkPage}
-    {block:IfShownotesonpermalinkpages}
-      {block:IfCenterall}<center>{/block:IfCenterall}
-      {PostNotes}
-      {block:IfCenterall}</center>{/block:IfCenterall}
-    {/block:IfShownotesonpermalinkpages}
-    {block:PermalinkPage}
-
-    <div style="clear: both;"></div>
-
-
-
-
-
+<div style="clear: both;"></div>
 </ol>
 
 <div id="footer">
-
   <div id="pagination">
-  {block:Pagination}
-    <p class="back">&nbsp;{block:NextPage}
-      <a href="{NextPage}">{lang:Next}</a> >>>
-    {/block:NextPage}</p>
-    <p class="forward">{block:PreviousPage}
-     <<< <a href="{PreviousPage}">{lang:Prev}</a>
-    {/block:PreviousPage}&nbsp;</p>
+    {block:Pagination}
+      <p class="forward">&nbsp;
+        {block:NextPage}<a href="{NextPage}">{lang:Next}</a> >>>{/block:NextPage}
+      </p>
+      <p class="back">
+      {block:PreviousPage}<<< <a href="{PreviousPage}">{lang:Prev}</a>{/block:PreviousPage}
+      &nbsp;</p>
 
-  {/block:Pagination}
+    {/block:Pagination}
 
-  {block:PermalinkPagination}
-    {block:PreviousPost}<p class="back">
-      <a href="{PreviousPost}">{lang:Next}</a> >>>
-    </p>{/block:PreviousPost}
-    {block:NextPost}<p class="forward">
-     <<< <a href="{NextPost}">{lang:Prev}</a>
-    {/block:NextPost}</p>
-  {/block:PermalinkPagination}
+    {block:PermalinkPagination}
+      {block:PreviousPost}<p class="back"><a href="{PreviousPost}">{lang:Next}</a> >>></p>{/block:PreviousPost}
+      {block:NextPost}<p class="forward"><<< <a href="{NextPost}">{lang:Prev}</a>{/block:NextPost}</p>
+    {/block:PermalinkPagination}
 
-  {block:DayPagination}
-    {block:PreviousDayPage}<p class="back">
-      <a href="{PreviousDayPage}">{lang:Next}</a> >>>
-    {/block:PreviousDayPage}</p>
-    {block:NextDayPage}<p class="forward">
-      <<< <a href="{NextDayPage}">{lang:Prev}</a>
-    </p>{/block:NextDayPage}
-  {/block:DayPagination}
+    {block:DayPagination}
+      {block:PreviousDayPage}<p class="back"><a href="{PreviousDayPage}">{lang:Next}</a> >>>{/block:PreviousDayPage}</p>
+      {block:NextDayPage}<p class="forward"><<< <a href="{NextDayPage}">{lang:Prev}</a></p>{/block:NextDayPage}
+    {/block:DayPagination}
   </div>
 
-
 <br /><br />
-
 <center>
 <a href="/archive">{lang:Archive}</a>
 </center>
-
-
-
 </div>
-
 </div>
 
 </body>
