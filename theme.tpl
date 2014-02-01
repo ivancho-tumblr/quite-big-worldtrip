@@ -636,7 +636,7 @@ a {
 }
 
 {block:IfNotShowTestPosts}
-.post .test {
+.test.post {
   display: none;
 }
 {/block:IfNotShowTestPosts}
