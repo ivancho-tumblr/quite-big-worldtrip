@@ -25,7 +25,7 @@ http://www.tumblr.com/theme/9601     Version 2.7     25/01/2014
 <meta name="if:Show note count" content="0"/>
 <meta name="if:Center links" content="1"/>
 <meta name="if:Large Photoset" content="1"/>
-<meta name="font:Heading" content="Futura"/>
+<meta name="font:Heading" content="Lorimer No 2"/>
 <meta name="image:Header" content="0">
 <meta name="if:Show notes on permalink pages" content="1">
 <meta name="if:Ask Link" content="1" />
@@ -36,10 +36,10 @@ http://www.tumblr.com/theme/9601     Version 2.7     25/01/2014
 <meta name="text:Caption width" content="875px"/>
 <meta name="text:Date size" content="15px"/>
 <meta name="text:Title size" content="25px"/>
-<meta name="text:Header size" content="85px"/>
+<meta name="text:Header size" content="45px"/>
 
 <meta name="font:Body" content="Helvetica Neue"/>
-<meta name="font:Date" content="Futura"/>
+<meta name="font:Date" content="Helvetica Neue"/>
   
 <meta name="text:Disqus Shortname" content=""/>
 
