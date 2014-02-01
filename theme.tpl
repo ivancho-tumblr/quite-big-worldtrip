@@ -31,6 +31,7 @@ http://www.tumblr.com/theme/9601     Version 2.7     25/01/2014
 <meta name="if:Ask Link" content="1" />
 <meta name="if:Submit Link" content="1" />
 <meta name="if:Stretch small images" content="0" />
+<meta name="if:Show test posts" content="0" />
 
 <meta name="text:Caption size" content="15px"/>
 <meta name="text:Caption width" content="875px"/>
@@ -633,6 +634,13 @@ a {
     padding-right: 25px;
     border-bottom: 1px dotted #ddd;
 }
+
+{block:IfNotShowTestPosts}
+.post .test {
+  display: none;
+}
+{/block:IfNotShowTestPosts}
+
 
 /* anything else */
 {CustomCSS}
