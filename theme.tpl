@@ -48,7 +48,7 @@ http://www.tumblr.com/theme/9601     Version 2.7     25/01/2014
 
 <link rel="shortcut icon" href="{Favicon}"/>
 <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
-<link rel="stylesheet" type="text/css" href="theme.css">
+<link rel="stylesheet" type="text/css" href="http://static.tumblr.com/8ewrkbl/rdan0bsqo/theme.css">
 <style type="text/css">
 {CustomCSS}
 </style>
